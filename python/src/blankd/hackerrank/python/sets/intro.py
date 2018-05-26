@@ -1,3 +1,3 @@
 def average(arr):
-  theSet = set(arr)
-  return sum(theSet) / len(theSet)
+    the_set = set(arr)
+    return sum(the_set) / len(the_set)
