@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/py-set-discard-remove-pop
 REMOVE_CMD = "remove"
 POP_CMD = "pop"
 DISCARD_CMD = "discard"

@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/py-set-add
 if __name__ == '__main__':
     with open("path/to/file.txt") as f:
         lines = f.readlines()

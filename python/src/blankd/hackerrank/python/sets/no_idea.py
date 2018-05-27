@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/no-idea
 if __name__ == '__main__':
     with open("path/to/data/file") as f:
         total = 0
