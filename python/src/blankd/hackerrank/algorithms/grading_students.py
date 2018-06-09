@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/grading/problem
 LOWEST_GRADE = 40
 MAX_GRADE_DISTANCE = 3
 
