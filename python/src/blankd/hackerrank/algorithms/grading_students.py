@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/grading/problem
 LOWEST_GRADE = 40
 MAX_GRADE_DISTANCE = 3
 
@@ -6,12 +7,8 @@ def calc_grade(grade):
     if grade < LOWEST_GRADE - MAX_GRADE_DISTANCE:
         return grade
     else:
-        diff = 1
-        while diff < MAX_GRADE_DISTANCE:
-            if (grade + diff) % 5 == 0:
-                return grade + diff
-            diff = diff + 1
-        return grade
+        mod = (5 - (grade % 5))
+        return grade + mod if mod < MAX_GRADE_DISTANCE else grade
 
 
 if __name__ == '__main__':
