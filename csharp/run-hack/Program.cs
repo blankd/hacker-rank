@@ -8,7 +8,7 @@ namespace run_hack
   {
     public static void Main(string[] args)
     {
-      IHackerRankSolution solution;
+      IHackerRankSolution solution = new AppleAndOrange();
       solution.PrepareData(File.ReadAllLines(args[0]));
       solution.RunSolution();
     }

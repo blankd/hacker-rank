@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
+// Solution for https://www.hackerrank.com/challenges/apple-and-orange/problem
 public class AppleAndOrange implements HackerRankSolution {
   private static final Integer S_AND_APPLE_TREE = 0;
   private static final Integer T_AND_ORANG_TREE = 1;

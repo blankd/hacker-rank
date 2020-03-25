@@ -1,7 +1,5 @@
 package com.hackerrank.main;
 
-import com.hackerrank.algorithms.impl.AppleAndOrange;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
