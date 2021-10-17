@@ -1,5 +1,8 @@
 class HackerRankSolution:
-    def prepare_data(self, file_to_rade):
+    def __init__(self, file_to_read):
+        self.file_to_read = file_to_read
+
+    def prepare_data(self):
         raise NotImplemented("prepare_data has not been implemented")
 
     def run_solution(self):
@@ -7,7 +10,3 @@ class HackerRankSolution:
 
     def print_results(self):
         raise NotImplemented("print_results has not been implemented.")
-
-
-if __name__ == '__main__':
-    print("Nothing to urn")
