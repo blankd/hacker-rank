@@ -12,6 +12,7 @@ public class AppleAndOrange implements HackerRankSolution {
   private static final Integer S_AND_APPLE_TREE = 0;
   private static final Integer T_AND_ORANG_TREE = 1;
   private int[] sAndT, trees, apples, oranges;
+  private final int[] hits = {0, 0};
   @Override
   public void prepareData(BufferedReader testFile) {
     try {
@@ -28,10 +29,13 @@ public class AppleAndOrange implements HackerRankSolution {
 
   @Override
   public void runSolution() {
-    int[] hits = {0, 0};
-    Arrays.stream(apples).forEach(apple -> hits[0] += didHit(trees[S_AND_APPLE_TREE] + apple));
-    Arrays.stream(oranges).forEach(orange -> hits[1] += didHit(trees[T_AND_ORANG_TREE] + orange));
-    Arrays.stream(hits).forEach(System.out::println);
+    Arrays.stream(apples).forEach(apple -> this.hits[0] += didHit(trees[S_AND_APPLE_TREE] + apple));
+    Arrays.stream(oranges).forEach(orange -> this.hits[1] += didHit(trees[T_AND_ORANG_TREE] + orange));
+  }
+
+  @Override
+  public void printResults() {
+    Arrays.stream(this.hits).forEach(System.out::println);
   }
 
   private Integer didHit(Integer distance) {
