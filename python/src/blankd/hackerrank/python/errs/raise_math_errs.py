@@ -2,6 +2,10 @@ from src.blankd.hackerrank.main.hacker_rank_solution import HackerRankSolution
 
 
 # Solution  for https://www.hackerrank.com/challenges/exceptions/problem
+def divide_numbers(one, two):
+    return int(one / two)
+
+
 class RaiseMathErrs(HackerRankSolution):
     def __init__(self, file_to_read):
         super().__init__(file_to_read)
@@ -15,7 +19,7 @@ class RaiseMathErrs(HackerRankSolution):
         for test in self.tests:
             try:
                 sTest = test.split(" ")
-                print(int(int(sTest[0]) / int(sTest[1])))
+                print(divide_numbers(int(sTest[0]), int(sTest[1])))
             except ZeroDivisionError as unused:
                 print("Error Code: integer division or modulo by zero")
             except Exception as e:
