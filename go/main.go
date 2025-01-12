@@ -13,7 +13,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(week.DiagonalDifferenceSolution(reading.PrepareArrayOfInt32Arrays(theFile)))
+	fmt.Println(week.FirstCountingSortSolution(reading.PrepareInt64Array(theFile)))
 
 	err = theFile.Close()
 	if err != nil {

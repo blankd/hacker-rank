@@ -27,14 +27,20 @@ func DiagonalDifferenceSolution(numbers [][]int32) int32 {
 	var sumRight int32
 
 	for index, _ := range numbers {
-		//fmt.Println(numbers[index][index])
 		sumLeft += numbers[index][index]
 	}
 
 	for index := len(numbers) - 1; index >= 0; index-- {
-		//fmt.Println(numbers[(len(numbers)-1)-index][index])
 		sumRight += numbers[(len(numbers)-1)-index][index]
 	}
 
 	return int32(math.Abs(float64(sumLeft - sumRight)))
+}
+
+func FirstCountingSortSolution(numbers []int64) [100]int64 {
+	ret := [100]int64{}
+	for _, value := range numbers {
+		ret[value]++
+	}
+	return ret
 }
