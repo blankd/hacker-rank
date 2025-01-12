@@ -13,7 +13,7 @@ func main() {
 		panic(err)
 	}
 
-	week.ConvertTo24HoursSolution(reading.GetNLines(theFile, 1)[0])
+	fmt.Println(week.LonelyIntegerSolution(reading.PrepareInt32Array(theFile)))
 
 	err = theFile.Close()
 	if err != nil {
