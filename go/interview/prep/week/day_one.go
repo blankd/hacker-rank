@@ -1,40 +1,11 @@
 package week
 
 import (
-	"bufio"
 	"fmt"
-	"io"
 	"math"
 	"strconv"
+	"strings"
 )
-
-func PrepareInt64Array(reader io.Reader) []int64 {
-	scanning := bufio.NewScanner(reader)
-	var ret []int64
-	for scanning.Scan() {
-		num, err := strconv.ParseInt(scanning.Text(), 10, 64)
-		if err != nil {
-			panic(err)
-		} else {
-			ret = append(ret, num)
-		}
-	}
-	return ret
-}
-
-func PrepareInt32Array(reader io.Reader) []int32 {
-	scanning := bufio.NewScanner(reader)
-	var ret []int32
-	for scanning.Scan() {
-		num, err := strconv.ParseInt(scanning.Text(), 10, 64)
-		if err != nil {
-			panic(err)
-		} else {
-			ret = append(ret, int32(num))
-		}
-	}
-	return ret
-}
 
 func PlusMinusRunSolution(vals []int64) {
 	var holdCount [3]float32
@@ -82,4 +53,17 @@ func MinMaxRunSolution(vals []int64) {
 	}
 
 	fmt.Println(minimum, maximum)
+}
+
+func ConvertTo24HoursSolution(timeStr string) string {
+	var theSplit []string = strings.Split(timeStr, ":")
+	var hours, _ = strconv.ParseInt(theSplit[0], 10, 64)
+	var isPm = strings.EqualFold(theSplit[2][2:], "PM")
+	if isPm && hours != 12 {
+		hours = hours + 12
+	} else if !isPm && hours == 12 {
+		hours = hours - 12
+	}
+
+	return fmt.Sprintf("%02d:%s:%s", hours, theSplit[1], theSplit[2][:2])
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"main/interview/prep/week"
+	"main/util/reading"
 	"os"
 )
 
@@ -12,7 +13,7 @@ func main() {
 		panic(err)
 	}
 
-	week.MinMaxRunSolution(week.PrepareInt64Array(theFile))
+	week.ConvertTo24HoursSolution(reading.GetNLines(theFile, 1)[0])
 
 	err = theFile.Close()
 	if err != nil {
