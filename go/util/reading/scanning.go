@@ -50,6 +50,10 @@ func GetNLines(reader io.Reader, lines int) []string {
 	return ret
 }
 
+func GetSingleLine(reader io.Reader) string {
+	return GetNLines(reader, 1)[0]
+}
+
 func PrepareArrayOfInt32Arrays(reader io.Reader) [][]int32 {
 	var ret [][]int32
 	scanning := bufio.NewScanner(reader)
