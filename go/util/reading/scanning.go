@@ -50,6 +50,10 @@ func GetNLines(reader io.Reader, lines int) []string {
 	return ret
 }
 
+func GetSingleLine(reader io.Reader) string {
+	return GetNLines(reader, 1)[0]
+}
+
 func PrepareArrayOfInt32Arrays(reader io.Reader) [][]int32 {
 	var ret [][]int32
 	scanning := bufio.NewScanner(reader)
@@ -84,4 +88,48 @@ func PrepareArrayOfInt64Arrays(reader io.Reader) [][]int64 {
 		ret = append(ret, row)
 	}
 	return ret
+}
+
+func PrepareSplitStringTwoInt64s(theStr string, spliter ...rune) (int64, int64) {
+	var split rune
+	if len(spliter) > 0 {
+		split = spliter[0]
+	}
+	broken := strings.Split(theStr, string(split))
+	one, _ := strconv.Atoi(broken[0])
+	two, _ := strconv.Atoi(broken[1])
+	return int64(one), int64(two)
+}
+
+func PrepareSplitStringTwoInt32s(theStr string, spliter ...rune) (int32, int32) {
+	var split = ' '
+	if len(spliter) > 0 {
+		split = spliter[0]
+	}
+	broken := strings.Split(theStr, string(split))
+	one, _ := strconv.Atoi(broken[0])
+	two, _ := strconv.Atoi(broken[1])
+	return int32(one), int32(two)
+}
+
+func PrepareSplitStringTwoInt16s(theStr string, spliter ...rune) (int16, int16) {
+	var split = ' '
+	if len(spliter) > 0 {
+		split = spliter[0]
+	}
+	broken := strings.Split(theStr, string(split))
+	one, _ := strconv.Atoi(broken[0])
+	two, _ := strconv.Atoi(broken[1])
+	return int16(one), int16(two)
+}
+
+func PrepareSplitStringTwoInts(theStr string, spliter ...rune) (int, int) {
+	var split = ' '
+	if len(spliter) > 0 {
+		split = spliter[0]
+	}
+	broken := strings.Split(theStr, string(split))
+	one, _ := strconv.Atoi(broken[0])
+	two, _ := strconv.Atoi(broken[1])
+	return one, two
 }
