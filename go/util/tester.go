@@ -17,3 +17,12 @@ func TestMatchInt32Arr(reader io.Reader, what []int32) bool {
 	}
 	return true
 }
+
+func TestMatchIntArr(reader io.Reader, what []int) bool {
+	for ind, line := range reading.PrepareIntArray(reader) {
+		if line != what[ind] {
+			return false
+		}
+	}
+	return true
+}

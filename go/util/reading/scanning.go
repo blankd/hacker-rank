@@ -36,6 +36,20 @@ func PrepareInt32Array(reader io.Reader) []int32 {
 	return ret
 }
 
+func PrepareIntArray(reader io.Reader) []int {
+	scanning := bufio.NewScanner(reader)
+	var ret []int
+	for scanning.Scan() {
+		num, err := strconv.ParseInt(scanning.Text(), 10, 64)
+		if err != nil {
+			panic(err)
+		} else {
+			ret = append(ret, int(num))
+		}
+	}
+	return ret
+}
+
 func GetNLines(reader io.Reader, lines int) []string {
 	var ret []string
 	var stop int
