@@ -68,12 +68,16 @@ func GetSingleLine(reader io.Reader) string {
 	return GetNLines(reader, 1)[0]
 }
 
-func PrepareArrayOfInt32Arrays(reader io.Reader) [][]int32 {
+func PrepareArrayOfInt32Arrays(reader io.Reader, spliter ...rune) [][]int32 {
 	var ret [][]int32
+	var split = ' '
+	if len(spliter) > 0 {
+		split = spliter[0]
+	}
 	scanning := bufio.NewScanner(reader)
 	for scanning.Scan() {
 		var row []int32
-		for _, strInt := range strings.Split(scanning.Text(), " ") {
+		for _, strInt := range strings.Split(scanning.Text(), string(split)) {
 			num, err := strconv.ParseInt(strInt, 10, 64)
 			if err != nil {
 				fmt.Println("Failed to parse int")
@@ -86,12 +90,16 @@ func PrepareArrayOfInt32Arrays(reader io.Reader) [][]int32 {
 	return ret
 }
 
-func PrepareArrayOfInt64Arrays(reader io.Reader) [][]int64 {
+func PrepareArrayOfInt64Arrays(reader io.Reader, spliter ...rune) [][]int64 {
 	var ret [][]int64
+	var split = ' '
+	if len(spliter) > 0 {
+		split = spliter[0]
+	}
 	scanning := bufio.NewScanner(reader)
 	for scanning.Scan() {
 		var row []int64
-		for _, strInt := range strings.Split(scanning.Text(), " ") {
+		for _, strInt := range strings.Split(scanning.Text(), string(split)) {
 			num, err := strconv.ParseInt(strInt, 10, 64)
 			if err != nil {
 				fmt.Println("Failed to parse int")
