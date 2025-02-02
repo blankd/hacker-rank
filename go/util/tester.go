@@ -3,10 +3,25 @@ package util
 import (
 	"io"
 	"main/util/reading"
+	"strconv"
 )
 
-func TestSingleLineAnswerString(reader io.Reader, what string) bool {
+func TestSingleAnswerString(reader io.Reader, what string) bool {
 	return what == reading.GetSingleLine(reader)
+}
+func TestSingleAnswerInt(reader io.Reader, what int) bool {
+	ans, _ := strconv.Atoi(reading.GetSingleLine(reader))
+	return what == ans
+}
+
+func TestSingleAnswerInt32(reader io.Reader, what int32) bool {
+	ans, _ := strconv.Atoi(reading.GetSingleLine(reader))
+	return what == int32(ans)
+}
+
+func TestSingleAnswerInt64(reader io.Reader, what int64) bool {
+	ans, _ := strconv.Atoi(reading.GetSingleLine(reader))
+	return what == int64(ans)
 }
 
 func TestMatchInt32Arr(reader io.Reader, what []int32) bool {
