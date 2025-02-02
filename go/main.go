@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"main/interview/prep/week"
+	"main/problem/solving/algorithms/datastructures"
 	"main/util"
 	"main/util/reading"
 	"os"
@@ -14,19 +14,15 @@ func main() {
 		panic(err)
 	}
 
-	var lines = reading.GetNLines(theFile, 2)
+	var lines = reading.PrepareIntArray(theFile)
 
 	correctAnswer, err := os.Open(os.Args[2])
 	if err != nil {
 		panic(err)
 	}
-	var answers []int32
-	for _, line := range lines {
-		n, m := reading.PrepareSplitStringTwoInt32s(line)
-		answers = append(answers, week.TowerBreakers(n, m))
-	}
+	var answer = datastructures.ReverseArray(lines)
 
-	fmt.Println(util.TestMatchInt32Arr(correctAnswer, answers))
+	fmt.Println(util.TestMatchIntArr(correctAnswer, answer))
 
 	err = correctAnswer.Close()
 	if err != nil {
