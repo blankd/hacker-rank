@@ -5,10 +5,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import com.hackerrank.ds.linkedlist.reverse.Solution;
 
 public class SolutionRunner {
   public static void main(String[] args) {
-    HackerRankSolution solution;
+    HackerRankSolution solution = new Solution();
     BufferedReader testFile = null;
     try {
       testFile = new BufferedReader(new FileReader(new File(args[0])));

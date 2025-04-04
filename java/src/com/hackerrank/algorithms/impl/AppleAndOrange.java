@@ -33,7 +33,6 @@ public class AppleAndOrange implements HackerRankSolution {
     Arrays.stream(oranges).forEach(orange -> this.hits[1] += didHit(trees[T_AND_ORANG_TREE] + orange));
   }
 
-  @Override
   public void printResults() {
     Arrays.stream(this.hits).forEach(System.out::println);
   }
